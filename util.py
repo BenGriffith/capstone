@@ -1,3 +1,17 @@
+# Load libraries
+import numpy as np
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+
+def onehot_encoding(feature):
+    values = np.array(feature)
+    label_encoder = LabelEncoder()
+    integer_encoded = label_encoder.fit_transform(values)
+
+    onehot_encoder = OneHotEncoder(sparse=False)
+    integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
+    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+    
+    return onehot_encoded
 
 def convert_age_to_days(age):
     '''

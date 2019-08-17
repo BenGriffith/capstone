@@ -2,7 +2,7 @@
 import numpy as np
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
-def onehot_encoding(feature):
+def onehotEncoding(feature):
     values = np.array(feature)
     label_encoder = LabelEncoder()
     integer_encoded = label_encoder.fit_transform(values)
@@ -13,7 +13,7 @@ def onehot_encoding(feature):
     
     return onehot_encoded
 
-def convert_age_to_days(age):
+def convertAgeTodays(age):
     '''
     Converting value from AgeuponOutcome to age in number of days
     '''
